@@ -1,0 +1,214 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
+public class Control1 : MonoBehaviour
+{
+    public GameObject Skeletal_System_Rigged; 
+    public GameObject Muscular_System_Rigged;
+    public GameObject Digestive_System_Rigged;
+    public GameObject Nervous_System_Rigged;
+    public GameObject Circulatory_System_Rigged;
+    public GameObject Respiratory_System_Rigged;
+    public Image Circulatorybtn;
+    public Image Respiratorybtn;
+    public Image Skeletalbtn;
+    public Image Muscularbtn;
+    public Image Digestivebtn;
+    public Image Nervousbtn;
+
+    
+    
+    void Start()
+    {
+        Circulatory_System_Rigged.SetActive(false);
+        Nervous_System_Rigged.SetActive(false);
+        Respiratory_System_Rigged.SetActive(false);
+        Skeletal_System_Rigged.SetActive(false);
+        Muscular_System_Rigged.SetActive(false);
+        Digestive_System_Rigged.SetActive(false);
+        Circulatorybtn.color = new Color32(180,180,180,255);
+        Respiratorybtn.color = new Color32(180,180,180,255);
+        Skeletalbtn.color = new Color32(180,180,180,255);
+        Muscularbtn.color = new Color32(180,180,180,255);
+        Digestivebtn.color = new Color32(180,180,180,255);
+        Nervousbtn.color = new Color32(180,180,180,255);
+    }
+   
+  
+
+    public void ToggleCirculatoryy()
+    {
+        if (Circulatory_System_Rigged.activeSelf)
+        {
+            Circulatory_System_Rigged.SetActive(false);
+            Circulatorybtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Circulatory_System_Rigged.SetActive(true);
+            Circulatorybtn.color = new Color32(180,180,180,255);
+        }
+    }
+    public void ToggleRespiratoryy()
+    {
+        if (Respiratory_System_Rigged.activeSelf)
+        {
+            Respiratory_System_Rigged.SetActive(false);
+            Respiratorybtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Respiratory_System_Rigged.SetActive(true);
+            Respiratorybtn.color = new Color32(180,180,180,255);
+        }
+    }
+    public void ToggleSkeletall()
+    {
+        if (Skeletal_System_Rigged.activeSelf)
+        {
+            Skeletal_System_Rigged.SetActive(false);
+            Skeletalbtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Skeletal_System_Rigged.SetActive(true);
+            Skeletalbtn.color = new Color32(180,180,180,255);
+        }
+    }
+    public void ToggleMuscularr()
+    {
+        if (Muscular_System_Rigged.activeSelf)
+        {
+            Muscular_System_Rigged.SetActive(false);
+            Muscularbtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Muscular_System_Rigged.SetActive(true);
+            Muscularbtn.color = new Color32(180,180,180,255);
+        }
+    }
+    public void ToggleDigestivee()
+    {
+        if (Digestive_System_Rigged.activeSelf)
+        {
+            Digestive_System_Rigged.SetActive(false);
+            Digestivebtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Digestive_System_Rigged.SetActive(true);
+            Digestivebtn.color = new Color32(180,180,180,255);
+        }
+    }
+    public void ToggleNervouss()
+    {
+        if (Nervous_System_Rigged.activeSelf)
+        {
+            Nervous_System_Rigged.SetActive(false);
+            Nervousbtn.color = new Color32(255,255,255,255);
+        }
+        else
+        {
+            Nervous_System_Rigged.SetActive(true);
+            Nervousbtn.color = new Color32(180,180,180,255);
+        }
+    }
+
+    // Respiratorio
+    public void ToggleRespiratory()
+    {
+        if (Respiratory_System_Rigged != null)
+        {
+            if (Respiratory_System_Rigged.activeSelf == true)
+            {
+                Respiratory_System_Rigged.SetActive(false);
+            }
+            else if (Respiratory_System_Rigged.activeSelf == false)
+            {
+                Respiratory_System_Rigged.SetActive(true);
+            }
+        }
+    }
+    
+    // Skeletal 
+    public void ToggleSkeletal()
+    {
+        if (Skeletal_System_Rigged != null)
+        {
+            if (Skeletal_System_Rigged.activeSelf == true)
+            {
+                Skeletal_System_Rigged.SetActive(false);
+            }
+            else if (Skeletal_System_Rigged.activeSelf == false)
+            {
+                Skeletal_System_Rigged.SetActive(true);
+            }
+        }
+    }
+    
+    // Muscular 
+    public void ToggleMuscular()
+    {
+        if (Muscular_System_Rigged != null)
+        {
+            if (Muscular_System_Rigged.activeSelf == true)
+            {
+                Muscular_System_Rigged.SetActive(false);
+            }
+            else if (Muscular_System_Rigged.activeSelf == false)
+            {
+                Muscular_System_Rigged.SetActive(true);
+            }
+        }
+    }
+    
+    // Digestive    
+    public void ToggleDigestive()
+    {
+        if (Digestive_System_Rigged != null)
+        {
+            if (Digestive_System_Rigged.activeSelf == true)
+            {
+                Digestive_System_Rigged.SetActive(false);
+            }
+            else if (Digestive_System_Rigged.activeSelf == false)
+            {
+                Digestive_System_Rigged.SetActive(true);
+            }
+        }
+    }
+    
+    // Nervous 
+    public void ToggleNervous()
+    {
+        if (Nervous_System_Rigged != null)
+        {
+            if (Nervous_System_Rigged.activeSelf == true)
+            {
+                Nervous_System_Rigged.SetActive(false);
+            }
+            else if (Nervous_System_Rigged.activeSelf == false)
+            {
+                Nervous_System_Rigged.SetActive(true);
+            }
+        }
+    }
+    
+    // Circulatory
+    public void ToggleCirculatory()
+    {
+        if (Circulatory_System_Rigged != null)
+        {
+            if (Circulatory_System_Rigged.activeSelf == true)
+            {
+                Circulatory_System_Rigged.SetActive(false);
+            }
+            else if (Circulatory_System_Rigged.activeSelf == false)
+            {
+                Circulatory_System_Rigged.SetActive(true);
+            }
+        }
+    }
+}
