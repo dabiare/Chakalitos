@@ -16,8 +16,10 @@ public class Control1 : MonoBehaviour
     public Image Muscularbtn;
     public Image Digestivebtn;
     public Image Nervousbtn;
+    public GameObject secondpanel;
 
-    
+
+    //El second panel son los botones se cerradura y return
     
     void Start()
     {
@@ -33,10 +35,27 @@ public class Control1 : MonoBehaviour
         Muscularbtn.color = new Color32(180,180,180,255);
         Digestivebtn.color = new Color32(180,180,180,255);
         Nervousbtn.color = new Color32(180,180,180,255);
+        secondpanel.SetActive(false);
     }
-   
-  
-
+//Inicia inactivo el second panel
+   void CheckSecondPanel()
+   {
+      if (
+          Circulatory_System_Rigged.activeSelf ||
+          Respiratory_System_Rigged.activeSelf ||
+          Skeletal_System_Rigged.activeSelf ||
+          Muscular_System_Rigged.activeSelf ||
+          Digestive_System_Rigged.activeSelf ||
+          Nervous_System_Rigged.activeSelf
+      )
+      {
+        secondpanel.SetActive(true);
+      }
+      else
+      {
+        secondpanel.SetActive(false);
+      }
+   }
     public void ToggleCirculatoryy()
     {
         if (Circulatory_System_Rigged.activeSelf)
@@ -49,6 +68,7 @@ public class Control1 : MonoBehaviour
             Circulatory_System_Rigged.SetActive(true);
             Circulatorybtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
     public void ToggleRespiratoryy()
     {
@@ -62,6 +82,7 @@ public class Control1 : MonoBehaviour
             Respiratory_System_Rigged.SetActive(true);
             Respiratorybtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
     public void ToggleSkeletall()
     {
@@ -75,6 +96,7 @@ public class Control1 : MonoBehaviour
             Skeletal_System_Rigged.SetActive(true);
             Skeletalbtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
     public void ToggleMuscularr()
     {
@@ -88,6 +110,7 @@ public class Control1 : MonoBehaviour
             Muscular_System_Rigged.SetActive(true);
             Muscularbtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
     public void ToggleDigestivee()
     {
@@ -101,6 +124,7 @@ public class Control1 : MonoBehaviour
             Digestive_System_Rigged.SetActive(true);
             Digestivebtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
     public void ToggleNervouss()
     {
@@ -114,6 +138,7 @@ public class Control1 : MonoBehaviour
             Nervous_System_Rigged.SetActive(true);
             Nervousbtn.color = new Color32(180,180,180,255);
         }
+        CheckSecondPanel();
     }
 
     // Respiratorio
