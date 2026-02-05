@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Control1 : MonoBehaviour
+public class ControlBotones : MonoBehaviour
 {
     public GameObject Skeletal_System_Rigged; 
     public GameObject Muscular_System_Rigged;
@@ -19,7 +19,7 @@ public class Control1 : MonoBehaviour
     public GameObject secondpanel;
 
 
-    //El second panel son los botones se cerradura y return
+    
     
     void Start()
     {
@@ -37,7 +37,6 @@ public class Control1 : MonoBehaviour
         Nervousbtn.color = new Color32(180,180,180,255);
         secondpanel.SetActive(false);
     }
-//Inicia inactivo el second panel
    void CheckSecondPanel()
    {
       if (
