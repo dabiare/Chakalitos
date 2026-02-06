@@ -1,0 +1,46 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EnviarPosicionEsfera : MonoBehaviour
+{
+     [Header("Materiales a Actualizar")]
+    public Material _PosicionEsfera;
+    
+    [Header("Nombres de Propiedades")]
+    //public string nombrePosicion = "_PosicionEsfera";
+    //public string nombreRadio = "_RadioEsfera";
+    public RawImage TexturaVideo; 
+    public Transform _CenterPoint; 
+    
+    private Vector3 _Posicionactual;
+    private float positionx;
+    private float positiony;
+    private float positionz;
+    
+    void Update()
+    {
+        ActualizarShaders();
+    }
+    
+    void ActualizarShaders()
+    {
+        if (_CenterPoint != null)
+        {
+            //Dimesiones del centerpoint
+            positionx = _CenterPoint.position.x; 
+            positiony = _CenterPoint.position.y; 
+            positionz = _CenterPoint.position.z; 
+            _Posicionactual = new Vector3(positionx, positiony, positionz);
+             _PosicionEsfera.SetVector("_CenterPoint",_Posicionactual);
+            
+        }
+        if (TexturaVideo != null)
+        {
+            // Enviar la textura del RawImage al shader
+             _PosicionEsfera.SetTexture("_BG", TexturaVideo.texture);  
+            // Las dimesiones de la texture
+        }
+    }
+}
