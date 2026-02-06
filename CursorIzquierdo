@@ -1,0 +1,29 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class HandIzquierdo : MonoBehaviour
+{        
+    [Header("Referencias")]
+    public Transform HandColliderLeft;
+    public Transform Tegumentary_System_OneMaterial_Riggedigged; 
+
+    private float positionY;
+    private float positionx;
+    private float positionz;
+    private Vector3 _Posicionactual;
+
+    void Update()
+    {
+        if (HandColliderLeft!= null)
+        { 
+            // Solo posicionY
+            positionY= HandColliderLeft.position.y;
+            positionx= Tegumentary_System_OneMaterial_Riggedigged.position.x;
+            positionz= Tegumentary_System_OneMaterial_Riggedigged.position.z;
+            _Posicionactual = new Vector3(positionx, positionY,positionz);
+            //This=darle claridad o pasarlo a otro metodo
+            this.transform.position= _Posicionactual;
+        }
+    }
+}
