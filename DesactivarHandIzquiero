@@ -1,0 +1,43 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ControlHandIzquierdo : MonoBehaviour
+{
+    [Header("Referencia de la Mano")]
+    public GameObject manoIzquierda;
+
+    [Header("Imagen del botón Candado")]
+    public Image candadoBtn;
+
+    void Start()
+    {
+        // Estado inicial:
+        // Mano visible → candado desactivado (gris)
+        if (manoIzquierda != null)
+            manoIzquierda.SetActive(true);
+
+        if (candadoBtn != null)
+            candadoBtn.color = new Color32(180, 180, 180, 255);
+    }
+
+    // Este método lo llama el botón del candado
+    public void ToggleMano()
+    {
+        if (manoIzquierda == null || candadoBtn == null)
+            return;
+
+        if (manoIzquierda.activeSelf)
+        {
+            // Apagar mano → candado ACTIVO (blanco)
+            manoIzquierda.SetActive(false);
+            candadoBtn.color = new Color32(255, 255, 255, 255);
+        }
+        else
+        {
+            // Prender mano → candado DESACTIVO (gris)
+            manoIzquierda.SetActive(true);
+            candadoBtn.color = new Color32(180, 180, 180, 255);
+        }
+    }
+}
+
