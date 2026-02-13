@@ -1,0 +1,38 @@
+using UnityEngine;
+
+public class Unlock : MonoBehaviour
+{
+    public ControlBotones controlBotones;
+    private HandIzquierdo handScript;
+
+    public void ResetearTodo()
+    {// Resetea todos los sistemas y colores 
+        if (controlBotones != null)
+        {
+            controlBotones.Circulatory_System_Rigged.SetActive(false);
+            controlBotones.Nervous_System_Rigged.SetActive(false);
+            controlBotones.Respiratory_System_Rigged.SetActive(false);
+            controlBotones.Skeletal_System_Rigged.SetActive(false);
+            controlBotones.Muscular_System_Rigged.SetActive(false);
+            controlBotones.Digestive_System_Rigged.SetActive(false);
+            // Resetea todos los colores a gris
+            controlBotones.Circulatorybtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.Respiratorybtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.Skeletalbtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.Muscularbtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.Digestivebtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.Nervousbtn.color = new Color32(180, 180, 180, 255);
+            controlBotones.secondpanel.SetActive(false);
+        }
+        //busca el Sphere y habilita HandIzquierdo
+        GameObject sphere = GameObject.FindWithTag("Sphere");
+        if (sphere != null)
+        {
+            handScript = sphere.GetComponent<HandIzquierdo>();
+            if (handScript != null)
+            {
+                handScript.enabled = true; 
+            }
+        }
+    }
+}
