@@ -1,39 +1,34 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Candado : MonoBehaviour
+public class Candados : MonoBehaviour
 {
     [Header("Referencias")]
     private GameObject Tegumentary_System_OneMaterial_Rigged;
     private HandIzquierdo myNewComponent;
-    public GameObject CandadoAbierto;
-    public Image candadoBtn;  
-
+    public GameObject Candado;
+    public Image candadoBtn;
+    
     void Start()
     {
         Tegumentary_System_OneMaterial_Rigged = GameObject.FindGameObjectWithTag("Sphere");
+        if (Tegumentary_System_OneMaterial_Rigged == null) return;
         myNewComponent = Tegumentary_System_OneMaterial_Rigged.GetComponent<HandIzquierdo>();
-        if (CandadoAbierto.activeSelf)
-        {
-            candadoBtn.color = new Color32(180, 180, 180, 255);
-        }
-        else
-        {
-            candadoBtn.color = new Color32(255, 255, 255, 255);
-        }
+        if (myNewComponent == null) return;
+        candadoBtn.color = new Color32(180, 180, 180, 255);
     }
-
+    
     public void ApretaBoton()
     {
-        if (CandadoAbierto.activeSelf)
+        if (myNewComponent == null) return;
+        
+        if (myNewComponent.enabled)
         {
-            CandadoAbierto.SetActive(false);
             myNewComponent.enabled = false; 
             candadoBtn.color = new Color32(255, 255, 255, 255);
         }
         else
         {
-            CandadoAbierto.SetActive(true);
             myNewComponent.enabled = true; 
             candadoBtn.color = new Color32(180, 180, 180, 255);
         }
